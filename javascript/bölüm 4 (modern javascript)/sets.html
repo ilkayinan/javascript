@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sets</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        // const sayilar = new Set([1,2,3]);
+        const sayilar = new Set();
+        sayilar.add(1);
+        sayilar.add(2);
+        sayilar.add(3);
+        sayilar.add(3); // tekrarlayan değişken set e girmez. mapten farkı bu.
+        sayilar.add("4"); // değişken türünden bağımsız. kafana göre seç
+        //array de lenght, map ve sette size operatörü var.
+
+        // const dizi = [...sayilar];
+        sayilar.delete(1);
+        console.log(sayilar.has(2)) ;
+        console.log(sayilar);
+
+        // sayilar.clear(); 
+        console.log(sayilar);
+        // console.log(sayilar.values()); //set iterator gelir bu for ile dönebilirsin demek
+
+        for (let x of sayilar){
+            console.log(x);
+        }
+
+    </script>
+</body>
+</html>

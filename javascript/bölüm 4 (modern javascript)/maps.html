@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maps</title>
+</head>
+<body>
+    
+
+
+    <script>
+        const ogrenciler = new Map();
+
+        let user = {username:"at kafası"}
+
+        
+        ogrenciler.set(1,"ilkay inan");
+        ogrenciler.set("6516813521523","burçin inan");
+        ogrenciler.set(true,"ali can");
+        ogrenciler.set(user,"at kafası")
+
+        console.log(ogrenciler);
+        console.log(ogrenciler.get(1));
+        console.log(ogrenciler.get("6516813521523"));
+        console.log(ogrenciler.get(true));
+        console.log(ogrenciler.get(user));
+        let sonuc;
+        sonuc = ogrenciler.size; //mapin büyüklüğünü verir
+        sonuc = ogrenciler.has(1); //mapte değişken var mı diye kontrol eder boolean döner
+        sonuc = ogrenciler.has(2);
+        // sonuc = ogrenciler.delete(1); //girilen öğeyi siler
+        sonuc = ogrenciler.size; 
+        sonuc = ogrenciler.has(1);
+        // ogrenciler.clear(); // bütün mapi boşaltır
+
+        // for (let x of ogrenciler.keys()) { // sadece key bilgilerini getirir.(ilk değişken)
+        //     console.log(x)
+        // }
+
+
+        // for (let x of ogrenciler.values()) { // sadece value leri getirir(ikinci bilgi)
+        //     console.log(x)
+        // }
+
+        // for (let x of ogrenciler.entries()) { // array olarak ayrı satırlarda gelir
+        //     console.log(x[1])
+        // }
+        for (let [key,value] of ogrenciler.entries()) { // array olarak ayrı satırlarda gelir
+            console.log(key, value)
+        }
+    </script>
+</body>
+</html>

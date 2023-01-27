@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inheritance</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // Kişi => k1,k2
+        // öğrenci => o1 ve o2 kisi deki özellikleri miras yolu ile oğrenciye atmalıyız.
+        // öğretmen
+
+        //parent
+        class Kisi{
+            constructor(ad,dogumYili){
+                console.log ("kisi constructor");
+                this.ad= ad;
+                this.dogumYili=dogumYili;
+            }
+            yasHesapla(){
+                let tarih = new Date().getFullYear();
+                return tarih-this.dogumYili;
+            }
+            kendiniTanit(){
+                return `benim adım ${this.ad}`;
+            }
+        }
+        //child
+        class Ogrenci extends Kisi {
+                constructor(ad,dogumYili,okulNumarası){
+                    console.log ("öğrenci constructor");
+                    super(ad,dogumYili);
+                    this.okulNumarası= okulNumarası;
+                }
+                dersCalis(){
+                    return (`${this.ad} ders çalışıyor.`)
+                }
+                kendiniTanit(){
+                return `benim adım ${this.ad} ve okul numaram ${this.okulNumarası}`;
+            }
+        }
+
+
+            class Ogretmen extends Kisi {
+                constructor(ad,dogumYili,brans){
+                    console.log ("öğretmen constructor");
+                    super(ad,dogumYili);
+                    this.brans= brans;
+                }
+                dersAnlat(){
+                    return (`${this.ad} ders anlatıyor.`)
+                }
+                kendiniTanit(){
+                return `benim adım ${this.ad} ve branşım ${this.brans}`;
+            }
+            // child içinde aynı isimle fonksiyonu çalıştırıp farklı bir denklem girerse parent tan geleni ezer. yeni funk çalışır.
+        }
+        let ogretmen = new Ogretmen("ilkay",1987,"fizik")
+        let kisi = new Kisi("ali",1990); 
+        let ogrenci = new Ogrenci("ahmet",1995,123);
+        // console.log(kisi.yasHesapla()) ;
+        // console.log(ogrenci.yasHesapla());
+        // console.log(ogrenci.dersCalis());
+        console.log(kisi.kendiniTanit());
+        console.log(ogrenci.kendiniTanit());
+        console.log(ogretmen.kendiniTanit());
+
+
+    </script>
+</body>
+</html>
